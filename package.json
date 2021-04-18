@@ -2,6 +2,7 @@
   "name": "bankapi_react_version",
   "version": "0.1.0",
   "private": true,
+  "proxy": "5000",
   "engines": {
     "npm": "7.7.6",
     "node": "15.14.0"
@@ -12,6 +13,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "concurrently": "^6.0.2",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "nodemon": "^2.0.7",
     "react": "^17.0.2",
@@ -20,13 +22,11 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
+    "start-client": "react-scripts start",
+    "start": "node ./app.js",
+    "heroku-postbuild": "npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run build",
-    "install-client": "npm install",
-    "heroku-postbuild": "npm run install-client && npm run build",
-    "start": "node server.js",
-    "client": "npm start",
-    "dev": "concurrently -n 'server,client' -c 'red,green'  \"env-cmd -f ./env.development nodemon ./app.js\" \"npm run client\""
+    "build": "react-scripts build && npm install"
   },
   "eslintConfig": {
     "extends": [
