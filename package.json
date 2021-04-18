@@ -23,8 +23,7 @@
   },
   "scripts": {
     "start-client": "react-scripts start",
-    "start": "node ./app.js",
-    "heroku-postbuild": "npm install && npm run build",
+    "start": "node ./app.js && npm start-client",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "react-scripts build && npm install"
   },
